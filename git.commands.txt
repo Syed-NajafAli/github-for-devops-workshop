@@ -1,0 +1,175 @@
+GIT COMMANDS 
+1. Git Version
+git --version
+Use: Git installed/version check.
+2. Git Config
+git config --global user.name "Your Name"
+git config --global user.email "email@example.com"
+Use: Git mein apna name/email set karna.
+git config --list
+Use: Configuration dekhna.
+3. Git Init
+git init
+Use: Current folder ko Git repository banana.
+4. Git Status
+git status
+Use: Files ki current Git status dekhna — modified, untracked, staged etc.
+5. Git Add
+git add filename
+Use: Specific file ko staging area mein add karna.
+git add .
+Use: Saari changes staging mein add karna.
+6. Git Commit
+git commit -m "message"
+Use: Staged changes ka permanent snapshot banana.
+Example:
+git commit -m "Added login page"
+7. Git Log
+git log
+Use: Commit history dekhna.
+git log --oneline
+Use: Short commit history.
+8. Git Diff
+git diff
+Use: Uncommitted changes dekhna.
+git diff --staged
+Use: Staged changes dekhna.
+9. Git Branch
+git branch
+Use: Branches dekhna.
+git branch feature
+Use: New branch banana.
+git branch -d feature
+Use: Branch delete karna.
+10. Git Switch
+git switch branch-name
+Use: Branch change karna.
+git switch -c feature
+Use: New branch bana kar us par switch karna.
+11. Git Merge
+git merge branch-name
+Use: Ek branch ki changes current branch mein merge karna.
+Example:
+git switch main
+git merge feature
+12. Git Clone
+git clone <repository-url>
+Use: GitHub repository ki copy local computer par lana.
+13. Git Remote
+git remote -v
+Use: Remote/GitHub repository ka URL dekhna.
+git remote add origin <repository-url>
+Use: Local repository ko GitHub repository se connect karna.
+14. Git Push
+git push origin main
+Use: Local commits ko GitHub par upload karna.
+First time:
+git push -u origin main
+Baad mein:
+git push
+15. Git Pull
+git pull
+Use: GitHub se latest changes local repository mein lana.
+Simple:
+GitHub → Local
+16. Git Fetch
+git fetch
+Use: Remote ki latest changes/information lana, lekin automatically merge nahi karta.
+Difference:
+fetch = changes lao, merge mat karo
+pull  = changes lao + merge karo
+17. Git Restore
+git restore filename
+Use: File ki uncommitted changes discard karna.
+⚠️ Changes lose ho sakti hain.
+18. Git Reset
+git reset filename
+Use: File ko staging area se remove karna.
+git reset --soft HEAD~1
+Use: Last commit undo, changes safe/staged.
+git reset --hard HEAD~1
+Use: Last commit + changes undo.
+⚠️ --hard carefully use karo.
+19. Git Revert
+git revert <commit-id>
+Use: Purane commit ko undo karne ke liye new commit create karta hai.
+Safer for shared branches.
+20. Git Stash
+git stash
+Use: Temporary changes ko side par rakhna.
+git stash pop
+Use: Stashed changes wapas lana.
+21. Git Rebase
+git rebase main
+Use: Current branch ki commits ko main ki latest history 
+ke upar replay karna; history clean/linear rakhne ke liye.
+22. Git Tag
+git tag v1.0.0
+Use: Important commit ko version/release name dena.
+23. Git Show
+git show <commit-id>
+Use: Kisi commit ki complete details/changes dekhna.
+24. Git Reflog
+git reflog
+Use: Git ke previous HEAD movements/history dekhna; galti se reset/checkout
+ hone par recovery mein useful.
+25. Git RM
+git rm filename
+Use: File delete + Git mein deletion stage.
+26. Git MV
+git mv old.txt new.txt
+Use: File rename/move karna.
+27. Git Clean
+git clean -n
+Use: Pehle check karna ke kya untracked files delete hongi.
+git clean -f
+Use: Untracked files delete karna.
+⚠️ Carefully use karo.
+28. .gitignore
+File:
+.gitignore
+Use: Git ko batana ke kin files/folders ko track nahi karna.
+Example:
+.env
+node_modules/
+*.log
+__pycache__/
+⭐ Most Important Daily Workflow
+git status
+git add .
+git commit -m "message"
+git push
+New Project → GitHub
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin <github-repo-url>
+git push -u origin main
+Existing GitHub Project
+git clone <github-repo-url>
+cd project
+Team Project
+git pull
+# changes karo
+git add .
+git commit -m "message"
+git push
+Basic Flow Yaad Rakho
+Working Directory
+       ↓
+   git add
+       ↓
+Staging Area
+       ↓
+  git commit
+       ↓
+Local Repository
+       ↓
+   git push
+       ↓
+     GitHub
+
+Sabse pehle ye commands strong karo:
+git init → status → add → commit → branch → switch → merge → clone 
+→ remote → push → pull → fetch → stash → revert
