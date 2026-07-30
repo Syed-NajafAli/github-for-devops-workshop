@@ -1,4 +1,5 @@
-GIT COMMANDS GIT 
+this is some new changes
+GIT COMMANDS 
 1. Git Version
 git --version
 Use: Git installed/version check.
